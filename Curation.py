@@ -31,7 +31,7 @@ class Study():
             self.load()
         except:
             self._id = study_id
-            save_dir = os.path.join(SAVE_DIR, self.name)
+            save_dir = os.path.join(STUDY_SAVE_DIR, self.name)
             if not os.path.exists(save_dir):
                 os.makedirs(save_dir)
             self._desc = ''
@@ -69,13 +69,13 @@ class Study():
 
     def save(self):
         """save class as self.name.txt"""
-        save_dir = os.path.join(SAVE_DIR, self.name)
+        save_dir = os.path.join(STUDY_SAVE_DIR, self.name)
         with open(save_dir + '.txt', 'w') as file:
             json.dump(self.__dict__, file)
 
     def load(self):
         """try load self.name.txt"""
-        load_dir = os.path.join(SAVE_DIR, f"{self.name}.txt")
+        load_dir = os.path.join(STUDY_SAVE_DIR, f"{self.name}.txt")
         with open(load_dir, 'r') as file:
             data = file.read()
             self.__dict__ = json.loads(data)
@@ -201,13 +201,13 @@ class Sample():
 
     def save(self):
         """save class as self.name.txt"""
-        save_dir = os.path.join(SAVE_DIR, self.study, f"{self.name}.txt")
+        save_dir = os.path.join(STUDY_SAVE_DIR, self.study, f"{self.name}.txt")
         with open(save_dir, 'w') as file:
             json.dump(self.__dict__, file)
 
     def load(self):
         """try load self.name.txt"""
-        load_dir = os.path.join(SAVE_DIR, self.study, f"{self.name}.txt")
+        load_dir = os.path.join(STUDY_SAVE_DIR, self.study, f"{self.name}.txt")
         with open(load_dir, 'r') as file:
             data = file.read()
             self.__dict__ = json.loads(data)

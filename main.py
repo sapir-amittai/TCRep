@@ -8,6 +8,7 @@ if __name__ == '__main__':
     sequence = study.build_train_representations(samples=None, save=bool, path=None)
 
     # use esm_2 to extract representation
+    model_checkpoint = "facebook/esm2_t4815B__UR50D"
     # pad to length of the longest sequence - can be done through esm parameters (no need to change sequences)
     # save a dictionary of {seq : representation} - make sure to save on lab folder may be heavy
 

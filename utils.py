@@ -7,6 +7,8 @@ from Bio.Seq import Seq
 from multiprocessing import cpu_count, Pool
 from itertools import combinations_with_replacement, product
 import json
+import requests
+from requests.adapters import HTTPAdapter, Retry
 
 
 def seq_identity(seq_a, seq_b):
@@ -76,3 +78,21 @@ def pairwise_scores(group_a, group_b=None, score=seq_identity, workers=0):
             with Pool(workers) as p:
                 pair_scores = np.array(p.starmap(score, pairs_to_check)).reshape((len(group_a), len(group_b)))
     return pair_scores
+
+
+def create_session(header, retries=5, wait_time=0.5, status_forcelist=None):
+    """
+    Creates a session using pagination
+    :param header: str url header session eill apply to
+    :param retries: int number of retries on failure
+    :param wait_time: float time (sec) between attempts
+    :param status_forcelist: list HTTP status codes that we should force a retry on
+    :return: requests session
+    """
+    s = requests.Session()
+    retries = Retry(total=retries,
+                    backoff_factor=wait_time,
+                    status_forcelist=status_forcelist)
+
+    s.mount(header, HTTPAdapter(max_retries=retries))
+    return s
