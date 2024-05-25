@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="bffa1a57-d040-4a69-a6f0-90a313bf394c" name="Phoenix" url="phoenix.cs.huji.ac.il">
+        <fileTransfer rootFolder="/cs/labs/dina/gal_passi" accessType="SFTP" host="phoenix.cs.huji.ac.il" port="22" sshConfigId="6db85d29-46b2-4449-b680-5494ae5085c0" sshConfig="gal_passi@phoenix.cs.huji.ac.il:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

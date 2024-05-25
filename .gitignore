@@ -1,0 +1,5 @@
+# Project exclude paths
+/db/
+/objects/
+# Project exclude paths
+/objects_all/
