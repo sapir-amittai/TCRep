@@ -36,7 +36,7 @@ class Study():
                 os.makedirs(save_dir)
             self._desc = ''
             self._samples = {'usable': [], 'uncertain': [], 'background': []}
-            self._columns = {'seq': '', 'v': '', 'd': '', 'j': '', 'study': ''}
+            self._columns = {'seq': 'AASeq', 'v': 'Vregion', 'd': 'Dregion', 'j': 'Jregion', 'study': 'RunId'}
 
         self._data_path = os.path.join(os.path.dirname(__file__), TCR_DB_PATH)
 
@@ -84,14 +84,16 @@ class Study():
         """
         :param unique: bool if True will only return unique rows. Will apply df.unique() of ret_columns only
         :param sample_ids: string or iterable of all samples ids to retrieve
-        :param ret_columns: optional list or string ['seq'| 'v' | 'd' | 'j' | 'study'] or if specified will only return the given columns
+        :param ret_columns: optional list or string ['Vregion' | 'Dregion' | 'Jregion' | 'AASeq' | 'cloneFraction' | 'RunId']
+                            if specified will only return the given columns
         :return: DataFrame containing all records with the sample_ids Note may have duplicates
         """
         sample_ids = [sample_ids] if isinstance(sample_ids, str) else sample_ids
         df = pd.read_table(os.path.join(self._data_path, f"{self._id}.tsv"))
         if ret_columns:
-            assert isinstance(ret_columns, (list, str)), 'ret_columns must be in [list, str]'
-            ret_columns = [self._columns[col] for col in ret_columns if col in self._columns]
+            if isinstance(ret_columns, str):
+                ret_columns = [ret_columns]
+            assert isinstance(ret_columns, list), 'ret_columns must be in [list | str]'
         else:
             ret_columns = df.columns
         return df[df[self._columns['study']].isin(sample_ids)][ret_columns]
@@ -176,10 +178,11 @@ class Study():
         """
         :param samples: iterable of Samples default is 'usable' Samples from study
         :param save: bool
-        :return: numpy.ndarray
+        :return: pandas DataFrame
         """
         samples = self._samples['usable'] if samples is None else samples
-        sequences = self.read_sample(samples, ret_columns=self._columns['seq']).unique()
+        sequences = self.read_sample(samples, ret_columns=['AASeq'])
+        sequences.drop_duplicates(inplace=True)
         path = path if path else f'{self._id}_rep_seqs.npy'
         if save:
             np.save(path, sequences)
