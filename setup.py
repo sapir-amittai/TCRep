@@ -12,7 +12,7 @@ def create_directories():
             pass
     os.chdir(BASE_DIRECTORY)
     os.mkdir(OBJECTS_DATABASE)
-    os.chdir(pjoin(BASE_DIRECTORY, STUDIES_DATABASE))
+    os.chdir(pjoin(BASE_DIRECTORY, OBJECTS_DATABASE))
     for db in OBJECTS_TYPES:
         os.mkdir(db)
     os.chdir(BASE_DIRECTORY)
