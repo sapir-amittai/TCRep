@@ -8,7 +8,7 @@ def create_directories():
     os.chdir(pjoin(BASE_DIRECTORY, STUDIES_DATABASE))
     for db in TCR_DATABASES.values():
         os.mkdir(db)
-        with open(INDEX, 'w') as _:
+        with open(pjoin(db, INDEX), 'w') as _:
             pass
     os.chdir(BASE_DIRECTORY)
     os.mkdir(OBJECTS_DATABASE)
