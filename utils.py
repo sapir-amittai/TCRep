@@ -1,3 +1,4 @@
+import os
 from Levenshtein import ratio as levenshtein_ratio
 from scipy.spatial.distance import pdist
 import numpy as np
@@ -9,6 +10,7 @@ from itertools import combinations_with_replacement, product
 import json
 import requests
 from requests.adapters import HTTPAdapter, Retry
+from consts import HOW_TO_COMBINE_EMBEDDINGS
 
 
 def seq_identity(seq_a, seq_b):
@@ -96,3 +98,10 @@ def create_session(header, retries=5, wait_time=0.5, status_forcelist=None):
 
     s.mount(header, HTTPAdapter(max_retries=retries))
     return s
+
+
+def get_filtered_and_mean_file_bood(path_to_csv_blood, filename_csv_blood):
+    return os.path.join(path_to_csv_blood, f"{HOW_TO_COMBINE_EMBEDDINGS}_file{filename_csv_blood}")
+
+def get_filtered_and_mean_file_fluid(path_to_csv_fluid):
+    return os.path.join(path_to_csv_fluid, f"{HOW_TO_COMBINE_EMBEDDINGS}_fluid.csv")
