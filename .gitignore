@@ -3,3 +3,9 @@
 /objects/
 # Project exclude paths
 /objects_all/
+/loggers/
+/info_sc_computer/
+/nootbooks/
+/.vscode/
+/__pycache__/
+/final_output/
