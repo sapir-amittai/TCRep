@@ -1,16 +1,33 @@
 import pandas as pd
 
 
+# main_on_esm2_native_way
 # PATH_TO_CSV_BLOOD = "/cs/labs/dina/sapir_amittai/code/spring_24/esm_2_embedding_blood/run_on_cs_computer/data_for_tsne"
 # # FILENAME_CSV_BLOOD = "data_20240625_173958.csv"
 # FILENAME_CSV_BLOOD = "data_2024-06-30_20:22:14.csv"
 # PATH_TO_CSV_FLUID = "/cs/labs/dina/sapir_amittai/code/spring_24/esm_2_embedding_synovial_fluid /run_on_cs_computer"
 # HOW_TO_COMBINE_EMBEDDINGS = "filtered_and_mean"
+# PERPLEXITY = [3, 5, 30]
+# # SAVE_FILE_SEPARATORS_NAME = "naive_tsne_on_all_the_data"
+# SAVE_FILE_SEPARATORS_NAME = "baseline_only_blood"
+# FILENAME_CSV_FLUID = ''
+# STATISTICS_IMAGES_PATH = f"/cs/labs/dina/sapir_amittai/code/spring_24/TCRep/final_output/data_statistics_train_test_results/random_blood_fluid"
+# GRAPH_NAME_PERF = f"random blood fluid"
 
+# main
+NUMBER_TYPE_T = 8
 PATH_TO_CSV_BLOOD = "/cs/labs/dina/sapir_amittai/code/spring_24/esm_2_embedding_blood/run_on_cs_computer/embedding_duplicate_seq_same_type"
-FILENAME_CSV_BLOOD = "PB_4_until_seq_1500.csv"
+FILENAME_CSV_BLOOD = "PB_8_until_seq_1000.csv"
+# FILENAME_CSV_BLOOD = "PB_4_until_seq_1500.csv"
 PATH_TO_CSV_FLUID = "/cs/labs/dina/sapir_amittai/code/spring_24/esm_2_embedding_blood/run_on_cs_computer/embedding_duplicate_seq_same_type"
-HOW_TO_COMBINE_EMBEDDINGS = "SF_4_until_seq_500.csv"
+FILENAME_CSV_FLUID = f"SF_{NUMBER_TYPE_T}_until_seq_500.csv"
+# FILENAME_CSV_FLUID = "SF_4_until_seq_500.csv"
+PERPLEXITY = [3, 5, 30]
+# SAVE_FILE_SEPARATORS_NAME = f"PB_vs_SF_8_perplexity_{PERPLEXITY}"
+SAVE_FILE_SEPARATORS_NAME = f"PB_vs_SF_{NUMBER_TYPE_T}_perplexity_{PERPLEXITY}"
+HOW_TO_COMBINE_EMBEDDINGS = "filtered_and_mean"
+STATISTICS_IMAGES_PATH = f"/cs/labs/dina/sapir_amittai/code/spring_24/TCRep/final_output/data_statistics_train_test_results/repetitive/{NUMBER_TYPE_T}"
+GRAPH_NAME_PERF = f"repetitive T: {NUMBER_TYPE_T}"
 
 STUDY_ID = 'PRJNA393498'
 # locally

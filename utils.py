@@ -14,7 +14,7 @@ from consts import HOW_TO_COMBINE_EMBEDDINGS
 
 
 def seq_identity(seq_a, seq_b):
-     return pairwise2.align.globalxx(seq_a, seq_b, score_only=True) / float(min(len(seq_a), len(seq_b)))
+     return pairwise2.align.globalxx(seq_a, seq_b, score_only=True) / float(max(len(seq_a), len(seq_b)))
 
 
 def format_runids(runids, desc=''):

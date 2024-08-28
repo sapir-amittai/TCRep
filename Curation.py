@@ -1,4 +1,5 @@
 import os
+from typing import List
 import pandas as pd
 from utils import *
 from sklearn.model_selection import train_test_split
@@ -10,6 +11,7 @@ from transformers import AutoTokenizer
 from trainer import build_datasets
 from definitions import *
 import numpy as np
+from consts import DATA_ID
 
 
 class TCRdb():
@@ -173,6 +175,23 @@ class Study():
         train_labels = functools.reduce(operator.iconcat, train_labels, [])
 
         return train_sequences, validation_sequences, test_sequences, train_labels, validation_labels, test_labels, transformer
+
+    def get_df_same_type_same_t_cell(self, type: str, sub_family_t: str) -> pd.DataFrame:
+        """
+        Get df for Synovial fluid or Peripheral plood with the same sub family of T cells
+        :param type: if the sample is SF (Synovial fluid) or PB (Peripheral blood)
+        :param sub_family_t: the sub family t (should be 4,8,9)
+        :return: pandas DataFrame
+        """
+        samples = DATA_ID[(DATA_ID['type'] == type) & (DATA_ID['SubFamilyT'] == sub_family_t)]['RunId']
+        df_sequences = self.read_sample(samples, ret_columns=['AASeq', 'RunId'])
+        return df_sequences
+
+    def get_repeat_sequence(self, type: str, sub_family_t: str) -> pd.DataFrame:
+        df = self.get_df_same_type_same_t_cell(type, sub_family_t)
+        filtered_df = df.groupby('AASeq').filter(lambda x: x['RunId'].nunique() > 1)
+        filtered_df_seq = pd.DataFrame(filtered_df['AASeq'].drop_duplicates())
+        return filtered_df_seq
 
     def build_train_representations(self, samples=None, save=True, path=None):
         """
