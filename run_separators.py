@@ -179,8 +179,8 @@ def calculate_statistics_on_train_test(df_combined, train_index, test_index):
         for seq_train in seqs_train:
             seq_id = seq_identity(seq_test, seq_train)
             prob_dist_one_seq.append(seq_id)
-            print(f"seq_test {seq_test}, seq_train {seq_train}, score {pairwise2.align.globalxx(seq_test, seq_train)}")
-            print(f"final score is {seq_id}\n")
+            # print(f"seq_test {seq_test}, seq_train {seq_train}, score {pairwise2.align.globalxx(seq_test, seq_train)}")
+            # print(f"final score is {seq_id}\n")
         # prob_dist_all_seq.append(prob_dist_one_seq)
         prob_test_dist_all_max[seq_test] = max(prob_dist_one_seq)
 
@@ -231,12 +231,19 @@ def draw_simlarity_graph(df_combined, test_index, y_test, predictions, \
     scores = np.array([prob_test_dist_all_max[y] for y in seqs_test])
     correct = predictions == y_test
 
+    correct_scores_mean = scores[correct].mean()
+    incorrect_scores_mean = scores[~correct].mean()
+
     # Plot
     plt.figure(figsize=(10, 5))
     plt.scatter(range(len(scores)), scores, color=np.where(correct, 'blue', 'red'), label='Prediction Correctness')
     plt.xlabel('Sample Index')
     plt.ylabel('Score')
-    plt.title(f'Scores by Prediction Correctness. Accuracy: {accuracy}')
+    plt.title(f'Scores by Prediction Correctness. Accuracy: {accuracy} for {len(seqs_test)} samples')
+    
+    # Add horizontal lines for the mean values
+    plt.axhline(y=correct_scores_mean, color='blue', linestyle='--', label='Mean Correct Score')
+    plt.axhline(y=incorrect_scores_mean, color='red', linestyle='--', label='Mean Incorrect Score')
 
     # Adding legend
     colors = {'Correct': 'blue', 'Incorrect': 'red'}
