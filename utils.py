@@ -1,5 +1,4 @@
 import os
-from Levenshtein import ratio as levenshtein_ratio
 from scipy.spatial.distance import pdist
 import numpy as np
 import math

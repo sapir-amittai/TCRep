@@ -1,0 +1,87 @@
+MOG Accuracy for layer 27 with k-fold CV and n_component 1: 0.4947368421052632
+MOG Accuracy for layer 27 with k-fold CV and n_component 2: 0.5387938596491229
+MOG Accuracy for layer 27 with k-fold CV and n_component 3: 0.4970175438596492
+MOG Accuracy for layer 27 with k-fold CV and n_component 4: 0.4780263157894737
+MOG Accuracy for layer 27 with k-fold CV and n_component 5: 0.5219078947368421
+MOG Accuracy for layer 27 with k-fold CV and n_component 6: 0.501140350877193
+MOG Accuracy for layer 27 with k-fold CV and n_component 7: 0.49682017543859647
+MOG Accuracy for layer 27 with k-fold CV and n_component 8: 0.4821929824561403
+MOG Accuracy for layer 27 with k-fold CV and n_component 9: 0.5261842105263158
+MOG Accuracy for layer 33 with k-fold CV and n_component 1: 0.5051335998316853
+MOG Accuracy for layer 33 with k-fold CV and n_component 2: 0.43946980854197354
+MOG Accuracy for layer 33 with k-fold CV and n_component 3: 0.519398274773827
+MOG Accuracy for layer 33 with k-fold CV and n_component 4: 0.45390279823269514
+MOG Accuracy for layer 33 with k-fold CV and n_component 5: 0.49890595413423106
+MOG Accuracy for layer 33 with k-fold CV and n_component 6: 0.4867872922364823
+MOG Accuracy for layer 33 with k-fold CV and n_component 7: 0.480517567851883
+MOG Accuracy for layer 33 with k-fold CV and n_component 8: 0.4907006101409636
+MOG Accuracy for layer 33 with k-fold CV and n_component 9: 0.48264254155270353
+
+
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 1 metric = Euclidean: 0.5647380601725226
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 2 metric = Euclidean: 0.5543656637912897
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 3 metric = Euclidean: 0.5605933094887439
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 4 metric = Euclidean: 0.5583841784136334
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 5 metric = Euclidean: 0.5667999158426257
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 6 metric = Euclidean: 0.5687986534820113
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 7 metric = Euclidean: 0.5791500105196719
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 8 metric = Euclidean: 0.5543235851041448
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 9 metric = Euclidean: 0.5831474857984431
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 1 metric = Euclidean: 0.5848464912280702
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 2 metric = Euclidean: 0.5744078947368421
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 3 metric = Euclidean: 0.6224780701754387
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 4 metric = Euclidean: 0.5910964912280702
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 5 metric = Euclidean: 0.6078947368421053
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 6 metric = Euclidean: 0.5763815789473684
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 7 metric = Euclidean: 0.5826535087719298
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 8 metric = Euclidean: 0.5680482456140352
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 9 metric = Euclidean: 0.5743421052631579
+
+
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 1 metric = Manhattan: 0.5619666048237477
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 2 metric = Manhattan: 0.5540094825809112
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 3 metric = Manhattan: 0.54582560296846
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 4 metric = Manhattan: 0.5519686662543805
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 5 metric = Manhattan: 0.5601731601731601
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 6 metric = Manhattan: 0.5398474541331685
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 7 metric = Manhattan: 0.568418882704597
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 8 metric = Manhattan: 0.5479694908266337
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 9 metric = Manhattan: 0.576499690785405
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 1 metric = Manhattan: 0.572989921612542
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 2 metric = Manhattan: 0.5434938409854423
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 3 metric = Manhattan: 0.5793729003359462
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 4 metric = Manhattan: 0.5560358342665175
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 5 metric = Manhattan: 0.5496752519596865
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 6 metric = Manhattan: 0.5645240761478163
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 7 metric = Manhattan: 0.5644568868980964
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 8 metric = Manhattan: 0.5750727883538633
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 9 metric = Manhattan: 0.5539081746920492
+
+
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 1 metric = Minkowski: 0.5422259625499685
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 2 metric = Minkowski: 0.5421418051756784
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 3 metric = Minkowski: 0.5586787292236483
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 4 metric = Minkowski: 0.552451083526194
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 5 metric = Minkowski: 0.5688407321691564
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 6 metric = Minkowski: 0.5545129391962971
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 7 metric = Minkowski: 0.5687986534820114
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 8 metric = Minkowski: 0.5647170208289501
+KNN Accuracy for layer 27 with k-fold CV and n_neighbor 9 metric = Minkowski: 0.556616873553545
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 1 metric = Minkowski: 0.549188596491228
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 2 metric = Minkowski: 0.5429824561403509
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 3 metric = Minkowski: 0.5933771929824562
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 4 metric = Minkowski: 0.572390350877193
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 5 metric = Minkowski: 0.5806578947368422
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 6 metric = Minkowski: 0.5451754385964912
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 7 metric = Minkowski: 0.5534649122807018
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 8 metric = Minkowski: 0.5389254385964912
+KNN Accuracy for layer 33 with k-fold CV and n_neighbor 9 metric = Minkowski: 0.559890350877193
+
+
+
+
+
+
+
+QDA Accuracy for layer 27 with k-fold CV: 0.5063601006634638
+QDA Accuracy for layer 33 with k-fold CV: 0.5404646464646465
